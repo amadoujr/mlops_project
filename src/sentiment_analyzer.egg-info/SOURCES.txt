@@ -1,0 +1,14 @@
+README.md
+setup.py
+src/sentiment_analyzer/__init__.py
+src/sentiment_analyzer/model_manager.py
+src/sentiment_analyzer/predict.py
+src/sentiment_analyzer/promote.py
+src/sentiment_analyzer.egg-info/PKG-INFO
+src/sentiment_analyzer.egg-info/SOURCES.txt
+src/sentiment_analyzer.egg-info/dependency_links.txt
+src/sentiment_analyzer.egg-info/entry_points.txt
+src/sentiment_analyzer.egg-info/top_level.txt
+src/sentiment_analyzer/tests/__init__.py
+src/sentiment_analyzer/tests/test_model_design.py
+tests/test_model_design.py

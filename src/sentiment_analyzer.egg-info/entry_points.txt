@@ -1,0 +1,3 @@
+[console_scripts]
+predict = sentiment_analyzer.predict:main
+promote = sentiment_analyzer.promote:main
