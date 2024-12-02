@@ -6,7 +6,7 @@ import mlflow
 # -------------------------------
 # Load the model saved locally
 # -------------------------------
-model_path = os.getenv("SENTIMENT_ANALYZER_MODEL_PATH", "/tmp/sentiment-analyzer-model")
+model_path = os.getenv("SENTIMENT_ANALYZER_MODEL_PATH", "/model/sentiment-analyzer-model")
 model = mlflow.sklearn.load_model(model_path)
 
 # Define input schema
