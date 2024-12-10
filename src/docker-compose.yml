@@ -1,0 +1,12 @@
+services:
+  webapp:
+    image: ${PREDICTION_CONTAINER}
+    ports:
+      - "8001:8000"
+  frontend:
+    build:
+      context: ./frontend  # Chemin vers le Dockerfile du frontend
+    container_name: frontend-container_2
+    ports:
+      - "8501:8501" 
+
