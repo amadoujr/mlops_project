@@ -16,7 +16,7 @@ if st.button('analyse le text'):
         st.warning("saisie un texte valide.")
     else:
         try:
-            api_url = "http://webapp:8001/predict"
+            api_url = "http://webapp:8000/predict"
             payload = {"reviews": [user_input]}
             response = requests.post(api_url, json=payload)
 

@@ -2,9 +2,10 @@ FROM python:3.9-slim
 
 WORKDIR /webapp
 
+RUN pip install --no-cache-dir mlflow fastapi uvicorn
+
 COPY . /webapp
 
-RUN pip install --no-cache-dir mlflow fastapi uvicorn
 
 ENV SENTIMENT_ANALYZER_MODEL_PATH=/model/sentiment-analyzer-model
 
