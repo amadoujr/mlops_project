@@ -223,9 +223,34 @@ First of all define in a *.env file* placed a *src/* repository, a variable
 ```
 PREDICTION_CONTAINER=sentiment-analyzer:1-<MODEL_NAME>-<MODEL_VERSION>
 ```
+1. Build the Docker Image
 
-bash
-Copier le code
-docker-compose up --build
-L'option --build force la construction de l'image pour le service frontend.
+Create a Docker image using the Dockerfile. I didn't mention for the backend api but you should be in the directory where the dockerfile is. Then use the command :
+
+```docker build -t streamlit-frontend .```
+
+2. Run the Docker Container
+
+Start the Docker container with : ``` docker run -p 8501:8501 streamlit-frontend ``` 
+
+Once the container has been launched, open a browser and access <http://localhost:8501>. 
+If everything is configured correctly, your Streamlit application should appear.🎉
+
+**Q: when i want to predict the feeling of a movie it doesn't work. does that make sense?**
+
+Yes, it makes sense, because for prediction to work, your Streamlit frontend needs to be able to communicate with the FastAPI API deployed in a separate container. If the two containers aren't connected or if the addresses/ports aren't configured correctly, the prediction request will fail.
+
+This is where docker-compose comes in.
+
+#### Assamble all with Docker-compose
+
+To compile all the required containers (in this case, only the frontend) and execute the application:
+
+``` docker-compose up --build ```
+
+The --build option forces the image to be built for the frontend service.
+
+Get access to services :
+- Frontend (Streamlit): <http://localhost:8501>
+- API (FastAPI): <http://localhost:8001>
 
